@@ -1,0 +1,22 @@
+{
+  "name": "appobook",
+  "version": "1.0.0",
+  "description": "A manner of a consumer and a service provider set down an appointment without the need of phone calls or whatsApp messages",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagobitencourt/appobook.git"
+  },
+  "author": "Thiago Bitencourt",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/thiagobitencourt/appobook/issues"
+  },
+  "homepage": "https://github.com/thiagobitencourt/appobook#readme"
+}
