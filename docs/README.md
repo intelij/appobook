@@ -23,6 +23,7 @@ Me, as a __customer__
 Me, as a __service provider__
 
 - Want to create a profile for me or my company and be able to say what kind of service do we provide
+- Want to set down an appointment in behalf of a customer
 - Want to be able to include and manage all my services with its respective prices
 - Want to be able to include and manage all my employees and link them with one or more services
 - Want to be able to include and manage my business hours
