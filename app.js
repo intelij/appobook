@@ -1,11 +1,15 @@
 'use strict';
 
+const APP_PORT = 9090;
+
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => res.send('Hello from Appobook app'));
+const API_V1_0 = require('./server');
 
-const appPort = 9090;
-app.listen(appPort, function() {
-  console.log("Server running and listening on port " + appPort);
+app.use('/api/v1.0/', API_V1_0);
+app.use('/', express.static(__dirname + '/public'));
+
+app.listen(APP_PORT, function() {
+  console.log("Server running and listening on port " + APP_PORT);
 });
