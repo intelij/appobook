@@ -3,9 +3,12 @@
 const APP_PORT = 9090;
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
 const API_V1_0 = require('./server');
+
+app.use(bodyParser.json())
 
 app.use('/api/v1.0/', API_V1_0);
 app.use('/', express.static(__dirname + '/public'));

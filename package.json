@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/thiagobitencourt/appobook/issues"
   },
-  "homepage": "https://github.com/thiagobitencourt/appobook#readme"
+  "homepage": "https://github.com/thiagobitencourt/appobook#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2"
+  }
 }
