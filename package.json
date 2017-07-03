@@ -7,7 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && cd public && npm run test",
+    "prestart": "PUBLIC=./public/dist/",
+    "postinstall": "cd public && npm install",
+    "start": "nodemon app.js",
+    "start:front": "cd public && npm start"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,7 @@
   },
   "homepage": "https://github.com/thiagobitencourt/appobook#readme",
   "dependencies": {
-    "body-parser": "^1.17.2"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
   }
 }
