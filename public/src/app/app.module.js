@@ -1,14 +1,11 @@
 'use strict';
 import angular from 'angular';
-
 /** Style Dependency */
 import '../assets/sass/style.scss';
-
 import $scriptjs from 'scriptjs';
-
 import $ from 'jquery';
-window.jQuery = $;
 
+window.jQuery = $;
 /** Dependencies modules imports */
 import root from './modules/root.module';
 
