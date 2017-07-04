@@ -4,15 +4,27 @@ import angular from 'angular';
 /** Style Dependency */
 import '../assets/sass/style.scss';
 
-/** Dependencies modules imports */
-import todoInput from './components/todoInput/todoInput.module';
-import todoList from './components/todoList/todoList.module';
-import todoApp from './modules/todoApp/todoApp.module';
+import $scriptjs from 'scriptjs';
+// import $ from 'jquery';
+// window.jQuery = $;
 
-export default (() => {
-  return angular.module('app', [
-    todoInput,
-    todoList,
-    todoApp
-  ])
-})();
+/** Dependencies modules imports */
+import root from './modules/root.module';
+
+function loadScript(bundle) {
+  return new Promise(resolve => $scriptjs(bundle, resolve));
+}
+
+// loadScript([
+//   'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js'
+// ]).then(startApp);
+
+startApp();
+
+function startApp() {
+  const app = angular.module('appobook', [
+    root
+  ]).name;
+
+  angular.element(() => angular.bootstrap(document, [app]));
+};
