@@ -7,16 +7,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const API_V1_0 = require('./server');
+const sequelize = require('./server/config/database');
 
-app.use(bodyParser.json())
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
 
-app.use('/api/v1.0/', API_V1_0);
+      const API_V1_0 = require('./server');
+      app.use(bodyParser.json())
 
-console.log(PUBLIC_DIR);
+      app.use('/api/v1.0/', API_V1_0);
+      app.use('/', express.static(PUBLIC_DIR));
 
-app.use('/', express.static(PUBLIC_DIR));
-
-app.listen(APP_PORT, function() {
-  console.log("Server running and listening on port " + APP_PORT);
-});
+      app.listen(APP_PORT, function() {
+        console.log("Server running and listening on port " + APP_PORT);
+      });
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });

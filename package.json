@@ -25,6 +25,9 @@
   "homepage": "https://github.com/thiagobitencourt/appobook#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "pg": "^6.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.2.1"
   }
 }
