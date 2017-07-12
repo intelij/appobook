@@ -1,17 +1,19 @@
 'use strict';
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('appobook', 'postgres', 'postgres', {
-  host: 'localhost',
-  dialect: 'postgres',
+const DATABASE = process.env.PG_DATABASE || 'appobook';
+const USERNAME = process.env.PG_USERNAME || 'postgres';
+const PASSWORD = process.env.PG_PASSWORD || 'postgres';
+const DATABASE_HOST = process.env.PG_HOST || 'localhost';
 
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
-});
-// Or you can simply use a connection uri
-// const sequelize = new Sequelize('postgres://postgres:postgres@localhost:5432/appobook');
+const sequelize = new Sequelize(
+    DATABASE,
+    USERNAME,
+    PASSWORD,
+    {
+      host: DATABASE_HOST,
+      dialect: 'postgres'
+    }
+);
 
 module.exports = sequelize;
