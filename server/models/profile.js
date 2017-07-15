@@ -1,16 +1,13 @@
 'use strict';
 const { sequelize, SequelizeClass } = require(__BASE + 'config/database');
 
-const User = sequelize.define('user', {
-  username: {
+const Profile = sequelize.define('profile', {
+  firstName: {
     type: SequelizeClass.STRING
   },
-  password: {
-    type: SequelizeClass.STRING
-  },
-  email: {
+  lastName: {
     type: SequelizeClass.STRING
   }
 });
 
-module.exports = User;
+module.exports = Profile;
